@@ -1,0 +1,121 @@
+/* Global Streamlit styling overrides for RepSense */
+
+/* Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap');
+
+/* Apply custom fonts */
+html, body, [class*="css"], .stMarkdown, p, button, input {
+    font-family: 'Outfit', sans-serif !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+}
+
+/* Base body tweaks */
+.stApp {
+    background-color: #050505 !important;
+    background-image: 
+        radial-gradient(ellipse 60% 60% at 50% -20%, rgba(245, 166, 35, 0.08), transparent 70%),
+        radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.05), transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px) !important;
+    background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px !important;
+}
+
+/* Sidebar Custom Styling */
+section[data-testid="stSidebar"] {
+    background-color: rgba(10, 10, 10, 0.8) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+    backdrop-filter: blur(12px) !important;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    margin-bottom: 20px !important;
+    backdrop-filter: blur(16px) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    transition: border-color 0.3s, box-shadow 0.3s !important;
+}
+.glass-card:hover {
+    border-color: rgba(245, 166, 35, 0.2) !important;
+    box-shadow: 0 12px 40px 0 rgba(245, 166, 35, 0.06) !important;
+}
+
+/* Form inputs styling */
+input[type="text"], input[type="password"], input[type="email"], textarea {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    padding: 10px 14px !important;
+}
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #f5a623 !important;
+    box-shadow: 0 0 8px rgba(245, 166, 35, 0.25) !important;
+}
+
+/* Buttons custom design */
+.stButton > button {
+    background: linear-gradient(135deg, #f5a623 0%, #b97a18 100%) !important;
+    color: #050505 !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 24px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    box-shadow: 0 4px 14px rgba(245, 166, 35, 0.2) !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+    width: 100% !important;
+}
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(245, 166, 35, 0.4) !important;
+    color: #000000 !important;
+}
+.stButton > button:active {
+    transform: translateY(0) !important;
+}
+
+/* Secondary Button styling */
+.secondary-btn > button {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #e8e8e8 !important;
+    box-shadow: none !important;
+}
+.secondary-btn > button:hover {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+}
+
+/* Metrics blocks customization */
+div[data-testid="stMetricValue"] {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 32px !important;
+    color: #ffffff !important;
+}
+div[data-testid="stMetricLabel"] {
+    color: #888888 !important;
+    text-transform: uppercase !important;
+    font-size: 11px !important;
+    letter-spacing: 0.1em !important;
+}
+
+/* Dynamic glowing border keyframes */
+@keyframes border-glow {
+    0% { border-color: rgba(245, 166, 35, 0.2); }
+    50% { border-color: rgba(0, 212, 255, 0.5); }
+    100% { border-color: rgba(245, 166, 35, 0.2); }
+}
+
+.glow-card {
+    border: 1px solid rgba(245, 166, 35, 0.2) !important;
+    animation: border-glow 6s infinite alternate;
+}
